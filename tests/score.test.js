@@ -1,4 +1,5 @@
-import { extractScore, leaderBoard, scoreDecider, toObject } from '../src/score';
+import { extractScore, leaderBoard, score, scoreDecider, toObject } from '../src/score';
+import 'regenerator-runtime/runtime';
 
 // Test extractScore()
 test('Should extract a number in the last index of a string', () => {
@@ -68,6 +69,23 @@ test('should return the log standings in order ', () => {
   const expected = ['1 Bayern Munich 4 pts', '2 Juventus 3 pts', '2 Bayer Munich 3 pts', '4 Real Madrid 1 pts', '4 Liverpool 1 pts', '4 Paris Saint-Germain 1 pts', '7 Chelsea 0 pts', '7 Arsenal 0 pts', '7 Barcelona 0 pts'];
 
   expect(leaderBoard(testData)).toEqual(expected);
+});
+
+// Test score()
+test('should return the log standings in order ', (done) => {
+  const filename = 'test.txt';
+  const expected = ['1 Tarantulas 6 pts', '2 Lions 5 pts', '3 Snakes 1 pts', '3 FC Awesome 1 pts', '5 Grouches 0 pts'];
+
+  function callback(data) {
+    try {
+      expect(data).toStrictEqual(expected);
+      done();
+    } catch (error) {
+      done(error);
+    }
+  }
+
+  score(filename, callback);
 });
 
 // Test extractScore()
