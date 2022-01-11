@@ -1,0 +1,35 @@
+{
+  "name": "span-challenge",
+  "version": "1.0.0",
+  "description": "Score calculator",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "build": "babel src/index.js -d dist",
+    "dev": "npm run build && nodemon --exec babel-node src/index.js",
+    "start": "node dist/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Myolisi/span-challenge.git"
+  },
+  "author": "Myolisi Ngubentombi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Myolisi/span-challenge/issues"
+  },
+  "homepage": "https://github.com/Myolisi/span-challenge#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.16.7",
+    "@babel/core": "^7.16.7",
+    "@babel/node": "^7.16.7",
+    "@babel/preset-env": "^7.16.7",
+    "babel-jest": "^27.4.6",
+    "jest": "^27.4.7",
+    "nodemon": "^2.0.15",
+    "regenerator-runtime": "^0.13.9"
+  },
+  "dependencies": {
+    "lodash": "^4.17.21"
+  }
+}
